@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "Blog app user backend",
   "main": "dist/index.js",
-  "type": "module",
   "scripts": {
     "test": "jest",
-    "start": "node --env-file=.env dist/index.js",
+    "build": "npx tsc",
+    "start": "npm run build && node dist/index.js",
     "dev": "nodemon dist/index.js",
     "watch": "tsc -w",
-    "server": "npm run watch && npm run start"
+    "server": "concurrently \"npm run watch\" \"npm run dev\""
   },
   "keywords": [
     "blog-app",
@@ -19,7 +19,10 @@
   "license": "ISC",
   "devDependencies": {
     "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.0"
+    "@types/express": "^5.0.0",
+    "concurrently": "^9.0.1",
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.7"
   },
   "dependencies": {
     "cors": "^2.8.5",

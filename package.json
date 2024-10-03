@@ -1,0 +1,29 @@
+{
+  "name": "user-backend",
+  "version": "1.0.0",
+  "description": "Blog app user backend",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "start": "node --env-file=.env dist/index.js",
+    "dev": "nodemon dist/index.js",
+    "watch": "tsc -w",
+    "server": "npm run watch && npm run start"
+  },
+  "keywords": [
+    "blog-app",
+    "user-backend"
+  ],
+  "author": "mayank tiwari",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "helmet": "^8.0.0"
+  }
+}
